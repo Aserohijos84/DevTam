@@ -22,5 +22,18 @@
                 </button>
             </form>
         </div>
+        <?php
+            $host = 'localhost';
+            $user = 'id17698330_pnpvirtualhub';
+            $pass = '<^sm+1aho|9(?Ab4';
+            $conn = mysqli_connect($host, $user, $pass);
+            if(! $conn )
+            {
+              die('Could not connect: ' . mysqli_error());
+            }
+            echo 'Connected successfully';
+            mysqli_close($conn);
+            ?>
+
     </body>
 </html>
