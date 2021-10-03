@@ -1,0 +1,19 @@
+{
+  "name": "devtam",
+  "version": "1.0.0",
+  "description": "devtam",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zacqwerty/DevTam.git"
+  },
+  "author": "zac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zacqwerty/DevTam/issues"
+  },
+  "homepage": "https://github.com/Zacqwerty/DevTam#readme"
+}
