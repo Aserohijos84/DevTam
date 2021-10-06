@@ -1,3 +1,6 @@
+<?php
+ session_start();
+ ?>
 <html>
     <head>
         <title>Hackathon DevTam ITMS</title>
@@ -10,10 +13,15 @@
 
         <div class="card" style="width: 350px; height: 400px; margin: auto; margin-top: 175px; border-radius: 12px; box-shadow: 4px 4px 3px 2px rgb(31, 31, 31);">
             <div class="card-body" style="margin: 5%; padding-top: 25%; text-align: center;">
-                <form method="post" targer="_self">
-                    <input class="form-control" type="text" name="name" placeholder="ID Number" required><br>
+              <!--EDIT FORM HERE-->
+                <form action = "loginProcess.php" method="post" target = "_self">
+                    <input class="form-control" type="text" name="email" placeholder="PNP Account No." required><br>
                     <input class="form-control" type="password" name="pass" placeholder="Password" required><br>
-                    <input class="btn btn-primary btn-lg" style="font-weight: bold; width: 75%; box-shadow: 3px 3px 3px rgb(0, 50, 214);" type="submit" value="Log-in">
+                    <input class="btn btn-primary btn-lg"
+                       name = "save"
+                      style="font-weight: bold; width: 75%; box-shadow: 3px 3px 3px rgb(0, 50, 214);"
+                      type="submit"
+                      value="Login">
                 </form>
             </div>
         </div>
