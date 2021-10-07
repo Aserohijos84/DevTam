@@ -8,14 +8,11 @@
         <link rel="stylesheet" href="Resources/css/lnInp.css" type="text/css">
     </head>
     <body style="background-color: rgb(67, 67, 126); margin: 0px; padding: 0px;">
-
         <div class="bgChange" style="width: 100%; height: 100%; top: 0; left: 0; position: fixed;"></div>
-
         <div class="card" style="width: 350px; height: 400px; margin: auto; margin-top: 175px; border-radius: 12px; box-shadow: 4px 4px 3px 2px rgb(31, 31, 31);">
             <div class="card-body" style="margin: 5%; padding-top: 25%; text-align: center;">
-              <!--EDIT FORM HERE-->
                 <form action = "loginProcess.php" method="post" target = "_self">
-                    <input class="form-control" type="text" name="email" placeholder="PNP Account No." required><br>
+                    <input class="form-control" type="text" name="pnp_account_no" placeholder="PNP Account No." required><br>
                     <input class="form-control" type="password" name="pass" placeholder="Password" required><br>
                     <input class="btn btn-primary btn-lg"
                        name = "save"
