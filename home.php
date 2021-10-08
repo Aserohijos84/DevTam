@@ -17,10 +17,8 @@
          style="width: 150px; position: absolute; bottom: 0; left: 75px; margin-bottom: 20px;">Log-out</button>
        </form>
      </div>
-     <div style="margin-left: 10%; top: 0; left: 0; height: 100%; width: 90%; position:fixed">
 
-     </div>
-    <div class="" style="display=flex;">
+    <div class="" style="display=flex; margin-left: 300px; top: 0; left: 0; height: 100%; width: 90%; position:fixed">
       <?php
       include 'database.php';
       $pnp_unit_id= $_SESSION["pnp_unit_id"];
