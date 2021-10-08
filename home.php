@@ -6,19 +6,19 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body style="background-color: rgb(245, 245, 245);">
-    <div class="" style="display=flex;">
-      <div style="width: 300px; height: 100%; position: fixed; top: 0; left: 0%; text-align: center; background-color: rgb(67, 67, 126);">
-         <form action="logout.php" method="post" target="_self">
-           <button
-           name = "logout"
-           type="submit"
-           class="btn btn btn-danger btn-lg"
-           style="width: 150px; position: absolute; bottom: 0; left: 75px; margin-bottom: 20px;">Log-out</button>
-         </form>
-       </div>
-       <div style="margin-left: 10%; top: 0; left: 0; height: 100%; width: 90%; position:fixed">
+      <!--
+    -->
+    <div style="width: 300px; height: 100%; position: fixed; top: 0; left: 0%; text-align: center; background-color: rgb(67, 67, 126);">
+       <form action="logout.php" method="post" target="_self">
+         <button
+         name = "logout"
+         type="submit"
+         class="btn btn btn-danger btn-lg"
+         style="width: 150px; position: absolute; bottom: 0; left: 75px; margin-bottom: 20px;">Log-out</button>
+       </form>
+     </div>
 
-       </div>
+    <div class="" style="display=flex; margin-left: 300px; top: 0; left: 0; height: 100%; width: 90%; position:fixed">
       <?php
       include 'database.php';
       $pnp_unit_id= $_SESSION["pnp_unit_id"];
