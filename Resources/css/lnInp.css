@@ -1,3 +1,20 @@
+.ss{
+
+padding-left: 20px;
+font-size: 24px;
+height: 40px;
+background:  rgb(67, 67, 126);
+color: white;
+transition: 0.7s;
+}
+.ss:hover{
+
+background:  white;
+color: rgb(67, 67, 126);
+transition: 0.4s;
+}
+
+
 @keyframes bg{
     0%{
         background-image: url(../../Resources/imgs/bg1.jfif);
@@ -25,6 +42,7 @@
     }
 }
 
+
 .bgChange{
     animation-name: bg;
     animation-duration: 25s;
@@ -32,6 +50,59 @@
     opacity: 0.5;
 }
 
+#header {
+    display: flex;
+    height: 60px;
+    position: relative;
+    justify-content: space-between;
+    align-content: center;
+    background: #0f1763;
+}
+
+#header .logo-img{
+    float: left;
+    position: absolute;
+    width:  90px;
+    height: auto;
+    margin: 0 auto;
+}
+
+#header .container .logo h1{
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-shadow: 3px 3px 3px #000000;
+    text-align: center;
+    color:  #fff;
+}
+
+.card {
+    width:  350px;
+    height:  400px;
+    margin-top: 100px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 3px 2px rgb(31, 31, 31);
+}
+
+.logo-img1{
+    width:  230px;
+    height:  auto;
+    padding-top:  30px;
+    margin: 0;
+}
+
+.card-body {
+    padding-top: 5%;
+}
+
+.btn1 {
+    font-weight:  bold;
+    width: 75%;
+    box-shadow:  3px 3px 3px rgb(31, 31, 31);
+}
 footer {
     text-align: center;
     font-size: small;
@@ -42,8 +113,8 @@ footer {
     height: 80px;
     width: 100%;
   	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,0.00) 0%,rgb(0, 0, 0) 100%);
-	background-image: -moz-linear-gradient(270deg,rgba(255,255,255,0.00) 0%,rgb(0, 0, 0) 100%);
-	background-image: -o-linear-gradient(270deg,rgba(255,255,255,0.00) 0%,rgb(0, 0, 0) 100%);
-	background-image: linear-gradient(180deg,rgba(255,255,255,0.00) 0%,rgb(0, 0, 0) 100%);
-	padding-top: 60px;
+	  background-image: -moz-linear-gradient(270deg,rgba(255,255,255,0.00) 0%,rgb(0, 0, 0) 100%);
+  	background-image: -o-linear-gradient(270deg,rgba(255,255,255,0.00) 0%,rgb(0, 0, 0) 100%);
+  	background-image: linear-gradient(180deg,rgba(255,255,255,0.00) 0%,rgb(0, 0, 0) 100%);
+	  padding-top: 60px;
 }
