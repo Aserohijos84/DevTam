@@ -6,8 +6,9 @@ if(isset($_POST['save']))
     include 'database.php';
     $sql=mysqli_query($conn,"SELECT * FROM employee where pnp_account_no='$pnp_account_no' and password='$pass'");
     $row  = mysqli_fetch_array($sql);
-    if(is_array($row))
+    if(is_array($row) && ($pnp_account_no == $row['pnp_account_no'] && $pass == $row['password']))
     {
+
        $_SESSION["pnp_account_no"] = $row['pnp_account_no'];
        $_SESSION["email_address"] = $row['email_address'];
        $_SESSION["password"] = $row['password'];
@@ -22,7 +23,12 @@ if(isset($_POST['save']))
     }
     else
     {
-      header("Location: home.php");
+      echo "<script >";
+      echo "alert('Invalid Email or Password.');
+       window.location = 'index.php';
+
+      ";
+        echo "</script>";
     }
 }
 ?>

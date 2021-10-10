@@ -10,7 +10,7 @@
     <body style="background-color: rgb(67, 67, 126); margin: 0px; padding: 0px;">
       <!--Header-->
     	<header id="header" class="fixed-top d-flex align-items-center">
-            <img src="Assets/logo.png" class="logo-img">
+            <img src="Resources/imgs/logo.png" class="logo-img">
     		<div class="container d-flex justify-content-center">
     			<div class="logo"><h1>PNP VIRTUAL WORKSPACE</h1>
             </div>
@@ -19,7 +19,8 @@
         <!--End of Header-->
         <div class="bgChange" style="width: 100%; height: 100%; top: 0; left: 0; position: fixed;"></div>
         <div class="card" style="width: 350px; height: 400px; margin: auto; margin-top: 175px; border-radius: 12px; box-shadow: 4px 4px 3px 2px rgb(31, 31, 31);">
-            <div class="card-body" style="margin: 5%; padding-top: 25%; text-align: center;">
+            <div class="card-body" style="margin: 5%; padding-top: 10%; text-align: center;">
+              <img src="Resources/imgs/logo.png" width="150" height="80" style="margin-bottom: 30px;"class="logo-img">
                 <form action = "loginProcess.php" method="post" target = "_self">
                     <input class="form-control" type="text" name="pnp_account_no" placeholder="PNP Account No." required><br>
                     <input class="form-control" type="password" name="pass" placeholder="Password" required><br>
