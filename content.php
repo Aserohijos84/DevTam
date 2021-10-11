@@ -13,14 +13,17 @@ session_start();
               Shared with me
             </h1>
         </div>
-        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#upload" style="width: auto; margin: 25px; padding: 10px; font-weight: bolder;">
-          + Add New File
-        </button>
+        
         <div class="card" style="width: auto; margin: 25px; padding: 10px;">
           <h5>Test name</h5>
-          <button style="position:absolute; right: 10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#configFile"><img src="gear.png"  width="20px" height="20px"></button>
-          <button style="position:absolute; right: 65px;" type="button" class="btn btn-primary"><img src="download.png"  width="20px" height="20px"></button>
+          <button style="position:absolute; right: 10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#configFile"><img src="Resources/imgs/gear.png"  width="20px" height="20px"></button>
+          <button style="position:absolute; right: 65px;" type="button" class="btn btn-primary"><img src="Resources/imgs/download.png"  width="20px" height="20px"></button>
+          <button style="position:absolute; right: 120px;" type="button" class="btn btn-primary"><img src="Resources/imgs/delete.png"  width="20px" height="20px"></button>
       </div>
+
+      <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#upload" style="width: auto; margin: 25px; padding: 10px; font-weight: bolder;">
+        + Add New File
+      </button>
         <!-- Modal -->
         <div class="modal fade" id="upload" tabindex="-1" aria-labelledby="uploadFile" aria-hidden="true">
           <div class="modal-dialog">
