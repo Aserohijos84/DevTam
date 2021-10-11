@@ -1,8 +1,8 @@
 <?php
 session_start();
  include 'database.php';
-$sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = 20210000 and isDone= false;");
-$sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = 20210000 and isDone= true;");
+$sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = 20210000 and isDone= 0;");
+$sqlTaskCompleted=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = 20210000 and isDone= 1;");
 
 
  ?>
@@ -18,11 +18,11 @@ $sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = 
           echo '<div class="list-group" style="width:100%;">
               <a href="#" class="list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small>3 days ago</small>
+                  <h5 class="mb-1">'.$rows["task_heading"].'</h5>
+                  <small>'.$rows["date_created"].'</small>
                 </div>
-                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                <small>And some small print.</small>
+                <p class="mb-1">'.$rows["task_description"].'</p>
+                <small>'.(($rows["isDone"]==1)? "Status: Done" : "Status: Ongoing").'</small>
               </a>
             </div>';
             }
