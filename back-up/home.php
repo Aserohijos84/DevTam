@@ -24,8 +24,6 @@
       <!--SIDEBAR-->
     <div style="width: 300px; height: 100%; position: fixed; top: 0; left: 0%; text-align: left; background-color: rgb(67, 67, 126);">
 
-      <img src="./Resources/imgs/logo.png" width="300px" height="130px" style="margin-top: 15px; margin-bottom: 35px;">
-
       <div class="ss" onclick=""> Account</div>
       <div class="ss" onclick="window.location.href = 'content.php';">Shared Files</div>
 
@@ -38,14 +36,13 @@
        </form>
      </div>
      <!--CONTENT-->
+     <div class="greetings">
+       <h1 style="margin-left: 12%;"> <?php
+        echo'Welcome, '.$_SESSION["rank"].' '.$_SESSION["first_name"].' '.$_SESSION["last_name"];
+         ?></h1>
+
+     </div>
 <div class="col-divider" style="display:flex;">
-  <div class="greetings">
-    <h1 style="margin-left: 12%;"> <?php
-     echo'Welcome, '.$_SESSION["rank"].' '.$_SESSION["first_name"].' '.$_SESSION["last_name"];
-      ?></h1>
-
-  </div> <br> <br>
-
   <div class="" style=" margin-left: 300px; top: 0; left: 0; height: 100%; width: 100%; position:relative; display: flex;">
     <?php
     if(mysqli_num_rows($sqlPNPUnitCards) > 0){
