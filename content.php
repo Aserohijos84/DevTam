@@ -16,12 +16,10 @@ session_start();
        </script>
       <link rel="stylesheet" href="Resources/css/lnInp2.css" type="text/css">
 
-
-
     </head>
     <body style="background-color: rgb(245, 245, 245);">
         <div style="width: 100%; height: 125px; position: relative; top: 0; left: 0%; background-color: rgb(67, 67, 126); margin-bottom: 30px;">
-            <h1 style="bottom: 0; margin-left: 15px; padding-top: 25px; position: relative; font-size: xxx-large; color: white;">
+            <h1 style="bottom: 0; margin-left: 100px; padding-top: 25px; position: relative; font-size: xxx-large; color: white;">
               Shared with me
             </h1>
         </div>

@@ -25,8 +25,8 @@
     <div style="width: 300px; height: 100%; position: fixed; top: 0; left: 0%; text-align: left; background-color: rgb(67, 67, 126);">
 
       <img src="./Resources/imgs/logo.png" width="300px" height="130px" style="margin-top: 15px; margin-bottom: 35px;">
-
-      <div class="ss" onclick=""> Account</div>
+      <div class="ss" onclick="window.location.href = 'home.php'">Home</div>
+      <div class="ss" onclick="window.location.href = 'account.php'"> Account</div>
       <div class="ss" onclick="window.location.href = 'content.php';">Shared Files</div>
 
        <form action="logout.php" method="post" target="_self">
@@ -44,7 +44,7 @@
          ?></h1>
 
      </div>
-<div class="col-divider" style="display:flex;">
+<div class="col-divider" style="display:flex; height: auto;">
   <div class="" style=" margin-left: 300px; top: 0; left: 0; height: 100%; width: 100%; position:relative; display: flex;">
     <?php
     if(mysqli_num_rows($sqlPNPUnitCards) > 0){
@@ -61,16 +61,15 @@
 ?>
   </div>
   <div class="card-main">
-            <div class="fixLine">
-                <div style="display: flex;">
-                    <h5 style="color: white; margin-left: 5px;">Tasks to do:</h5>
-                    <h5 style="color: white; position:absolute; right: 10%;" id="time"></h5>
-                </div>
+    <h5 style="color: white; width: 100%;">Tasks to do:</h5>
+    <div class="card-insideD" style="margin: 0; padding: 0;">
+      <iframe src="listtask.php" frameborder="0" width="100%" height="200" style="border-radius: inherit;"></iframe>
+    </div>
+    <h5 style="color: white; width: 100%; padding-top: 12px;">Completed:</h5>
+    <div class="card-insideD" style="margin: 0; padding: 0;">
+      <iframe src="listtask.php" frameborder="0" width="100%" height="200"style="border-radius: inherit;"></iframe>
+    </div>
 
-                <div class="card insideD" style="margin: 0; padding: 0;">
-                    <iframe src="listtask.php" frameborder="0" width="100%" height="100%" style="border-radius: inherit;"></iframe>
-                </div>
-            </div>
           </div>
 </div>
 

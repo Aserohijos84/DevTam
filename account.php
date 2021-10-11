@@ -26,7 +26,8 @@
 
       <img src="./Resources/imgs/logo.png" width="300px" height="130px" style="margin-top: 15px; margin-bottom: 35px;">
 
-      <div class="ss" onclick=""> Account</div>
+      <div class="ss" onclick="window.location.href = 'home.php'">Home</div>
+      <div class="ss" onclick="window.location.href = 'account.php'"> Account</div>
       <div class="ss" onclick="window.location.href = 'content.php';">Shared Files</div>
 
        <form action="logout.php" method="post" target="_self">
