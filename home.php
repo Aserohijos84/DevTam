@@ -38,14 +38,13 @@
        </form>
      </div>
      <!--CONTENT-->
+     <div class="greetings">
+       <h1 style="margin-left: 300px;"> <?php
+        echo'Welcome, '.$_SESSION["rank"].' '.$_SESSION["first_name"].' '.$_SESSION["last_name"];
+         ?></h1>
+
+     </div>
 <div class="col-divider" style="display:flex;">
-  <div class="greetings">
-    <h1 style="margin-left: 12%;"> <?php
-     echo'Welcome, '.$_SESSION["rank"].' '.$_SESSION["first_name"].' '.$_SESSION["last_name"];
-      ?></h1>
-
-  </div> <br> <br>
-
   <div class="" style=" margin-left: 300px; top: 0; left: 0; height: 100%; width: 100%; position:relative; display: flex;">
     <?php
     if(mysqli_num_rows($sqlPNPUnitCards) > 0){
@@ -74,6 +73,7 @@
             </div>
           </div>
 </div>
+
 
 
     </body>
