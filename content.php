@@ -5,15 +5,6 @@ session_start();
     <head>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
-      <script>
-           function refreshTime() {
-               const timeDisplay = document.getElementById("time");
-               const dateString = new Date().toLocaleString();
-               const formattedString = dateString.replace(", ", " - ");
-               timeDisplay.textContent = formattedString;
-           }
-           setInterval(refreshTime, 1000);
-       </script>
       <link rel="stylesheet" href="Resources/css/lnInp2.css" type="text/css">
 
     </head>
@@ -24,7 +15,7 @@ session_start();
             </h1>
         </div>
 
-        <div class="column-divider" style="display: flex; width: 100%; height: auto; ">
+        <div class="column-divider" style="display: flex; width: 100%; height:80%; ">
           <div class="column-units" style="width: 40%; height: 100%; border-right: 2px;">
             <div class="column-title-holder" style="text-align: center;">
               <h2><b>PNP UNIT</b></h2>
@@ -46,16 +37,18 @@ session_start();
             </div>
           </div>
           <div class="column-shared-files" style="width: 100%;">
-            <div class="card" style="width: auto; margin: 25px; padding: 10px;">
-              <h5>Test name</h5>
-              <button style="position:absolute; right: 10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#configFile"><img src="Resources/imgs/gear.png"  width="20px" height="20px"></button>
-              <button style="position:absolute; right: 65px;" type="button" class="btn btn-primary"><img src="Resources/imgs/download.png"  width="20px" height="20px"></button>
-              <button style="position:absolute; right: 120px;" type="button" class="btn btn-primary"><img src="Resources/imgs/delete.png"  width="20px" height="20px"></button>
-
+            <!-- -->
+            <!--   <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#upload" style="width: auto; margin: 25px; padding: 10px; font-weight: bolder;">
+                + Add New File
+              </button>
+              <div class="card" style="width: auto; margin: 25px; padding: 10px;">
+                <h5>Test name</h5>
+                <button style="position:absolute; right: 10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#configFile"><img src="Resources/imgs/gear.png"  width="20px" height="20px"></button>
+                <button style="position:absolute; right: 65px;" type="button" class="btn btn-primary"><img src="Resources/imgs/download.png"  width="20px" height="20px"></button>
+                <button style="position:absolute; right: 120px;" type="button" class="btn btn-primary"><img src="Resources/imgs/delete.png"  width="20px" height="20px"></button>-->
+                <iframe src="content-sharedfiles.php" title="description" style="width: 100%; height: 100%;"></iframe>
           </div>
-          <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#upload" style="width: auto; margin: 25px; padding: 10px; font-weight: bolder;">
-            + Add New File
-          </button>
+
           </div>
         </div>
         <!-- Modal -->
