@@ -14,7 +14,6 @@ color: rgb(67, 67, 126);
 transition: 0.4s;
 }
 
-
 @keyframes bg{
     0%{
         background-image: url(../../Resources/imgs/bg1.jfif);
