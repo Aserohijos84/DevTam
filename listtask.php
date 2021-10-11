@@ -1,11 +1,8 @@
 <?php
 session_start();
- include 'database.php';
-$sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = 20210000 and isDone= false;");
-$sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = 20210000 and isDone= true;");
-
 
  ?>
+
 <html>
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
@@ -13,15 +10,18 @@ $sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = 
     </head>
     <body>
       <?php
-      if(mysqli_num_rows($sqlToDoList) > 0){
-        while($rows = mysqli_fetch_assoc($sqlToDoList)){
+      include 'database.php';
+     $sqlTasksToDo=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no=20210000 and isDone = 0;");
+      $sqlCompleted=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no=20210000 and isDone = 1;");
+      if(mysqli_num_rows($sqlTasksToDo) > 0){
+        while($rows = mysqli_fetch_assoc($sqlTasksToDo)){
           echo '<div class="list-group" style="width:100%;">
               <a href="#" class="list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small>3 days ago</small>
+                  <h5 class="mb-1">'.$rows["task_heading"].'</h5>
+                  <small>'.$rows["date_created"].'</small>
                 </div>
-                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                <p class="mb-1">'.$rows["task_description"].'</p>
                 <small>And some small print.</small>
               </a>
             </div>';
@@ -31,6 +31,5 @@ $sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = 
             echo "Nothing to do today.";
           }
        ?>
-
     </body>
 </html>
