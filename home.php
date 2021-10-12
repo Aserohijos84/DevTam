@@ -51,7 +51,7 @@
       if(mysqli_num_rows($sqlPNPUnitCards) > 0){
         while($rowsPNPUnitCards  = mysqli_fetch_assoc($sqlPNPUnitCards)){
           echo '<div class="card deptCard" id="card">
-              <img width="900px" height="175px" class="card-img-top imgDept" src="https://th.bing.com/th/id/OIP.SbXGF2KkQYG5Ggz6RG7IxAHaHa?pid=ImgDet&rs=1">
+              <img width="900px" height="175px" class="card-img-top imgDept" src="Resources/imgs/itms_hackathon_cardBG.PNG">
               <div class="card-body">
                 <h5 class="card-title">'.$rowsPNPUnitCards['pnp_unit_name'].'</h5>
                 <a href="'.$rowsPNPUnitCards['video_conference_link'].'" class="btn btn-primary" style="margin-bottom: 1px;">Go to Conference</a>
@@ -68,7 +68,7 @@
     </div>
     <h5 style="color: white; width: 100%; padding-top: 12px;">Completed:</h5>
     <div class="card-insideD" style="margin: 0; padding: 0;">
-      <iframe src="listtask.php" frameborder="0" width="100%" height="200"style="border-radius: inherit;"></iframe>
+      <iframe src="listComplete.php" frameborder="0" width="100%" height="200"style="border-radius: inherit;"></iframe>
     </div>
     </div>
     </div>

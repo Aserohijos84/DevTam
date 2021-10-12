@@ -8,6 +8,7 @@ session_start();
       <link rel="stylesheet" href="Resources/css/lnInp2.css" type="text/css">
     </head>
     <body style="background-color: rgb(245, 245, 245);" >
+
         <div style="width: 100%; height: 125px; position: relative; top: 0; left: 0%; background-color: rgb(67, 67, 126); margin-bottom: 30px; display: flex;"">
             <h1 style="bottom: 0; margin-left: 100px; padding-top: 25px; position: relative; font-size: xxx-large; color: white;">
               Shared with me
@@ -61,15 +62,18 @@ session_start();
      $pnp_unit_id= $_SESSION["pnp_unit_id"];
      $sqlSharedFiles=mysqli_query($conn, "
      SELECT DISTINCT shared_files.*, pnp_unit.pnp_unit_name FROM `shared_files`, pnp_unit where  (shared_files.pnp_unit_id = pnp_unit.pnp_unit_id)
- and shared_files.pnp_account_no = 20210000");
+ and shared_files.pnp_account_no = ".$pnp_account_no." ");
 
        if(mysqli_num_rows($sqlSharedFiles) > 0){
          while($rows  = mysqli_fetch_assoc($sqlSharedFiles)){
            if($rows["pnp_unit_id"] == $_SESSION["active_unit"]  ){
-             echo '<div class="card" style="width: auto; height: auto; margin: 25px; padding: 10px; id= '.$rows["file_id"].'">
+
+             echo '<div class="card" style="  width: auto; height: auto; margin: 25px; padding: 10px; display: flex;" id= '.$rows["file_id"].'">
                 <h5>'.$rows["filename"].'</h5>
-                <button style="position:absolute; right: 65px;" type="button" class="btn btn-primary" name="download"><img src="Resources/imgs/download.png"  width="20px" height="20px"></button>
-                <button style="position:absolute; right: 120px;" type="button" class="btn btn-primary" name="delete"><img src="Resources/imgs/delete.png"  width="20px" height="20px"></button>
+                <form action="downloadAndDelete.php" method="POST" enctype="multipart/form-data" style=" position: absolute; right: 20px; margin:0; padding:0;">
+                <button style="position:relative;" type="submit" class="btn btn-primary" value= '.$rows["file_id"].' name="download"><img src="Resources/imgs/download.png"  width="20px" height="20px"></button>
+                <button style="position:relative;" type="submit" class="btn btn-primary" value= '.$rows["file_id"].' name="delete"><img src="Resources/imgs/delete.png"  width="20px" height="20px"></button>
+                </form>
              </div>';
            }
              }
@@ -79,7 +83,7 @@ session_start();
           </div>
         </div>
         <!-- Modal -->
-        <form action="" method="POST">
+
           <div class="modal fade" id="upload" tabindex="-1" aria-labelledby="uploadFile" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -87,30 +91,22 @@ session_start();
                   <h5 class="modal-title" id="uploadFile">Upload a file</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                            <label for="formFile" class="form-label">File</label>
-                            <input class="form-control" type="file" id="formFile" name="formFile">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" name="upload">Upload</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                </div>
+                <form action="uploadProcess" method="POST" enctype="multipart/form-data">
+                  <div class="modal-body">
+                      <div class="mb-3">
+                              <label for="formFile" class="form-label">File</label>
+                              <input class="form-control" type="file"  name="formFile">
+                      </div>
+                  </div>
+
+                  <div class="modal-footer">
+                      <input type="submit" class="btn btn-primary" name="upload" value="Upload"/>
+                      <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancel"/>
+                  </div>
+                </form>
+                
               </div>
             </div>
           </div>
-        </form>
-        <?php
-        if(isset($_POST["upload"])){
-           include 'database.php';
-           $filename = $_FILES['formFile']['name'];
-           $data = file_get_contents($_FILES['formFile']['tmp_name']);
-
-           $sqlInsertFile = mysqli_query($conn, "
-            INSERT INTO `shared_files` VALUES (NULL, 'new_sample_file2.txt', CURRENT_TIMESTAMP, ".$data.", '".$_SESSION["pnp_account_no"]."', '".$_SESSION["active_unit"]."');
-           ");
-        }
-         ?>
     </body>
 </html>

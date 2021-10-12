@@ -5,14 +5,8 @@
 
  $pnp_account_no= $_SESSION["pnp_account_no"];
  $pnp_unit_id= $_SESSION["pnp_unit_id"];
- $sqlPNPUnitCards=mysqli_query($conn," select
-                                       video_conferences.video_conference_link,
-                                       pnp_unit.pnp_unit_name
-                                       from
-                                       video_conferences,
-                                       pnp_unit
-                                       where
-                                       pnp_unit.pnp_unit_id = video_conferences.pnp_unit_id");
+ //select * from employee
+ $sqlEmployeeDetails=mysqli_query($conn," select * from employee where pnp_account_no=".$pnp_account_no." ");
  ?>
 <html>
     <head>
@@ -41,42 +35,46 @@
      </div>
      <!--CONTENT-->
      <div style="margin-left: 300px; top: 0; left: 0; height: 100%; width: 100%; position:relative; padding: 50px;">
-        <div>
-          <div>
-            <img src="https://th.bing.com/th/id/OIP.cKGvwd4BBszADXKkFc8ISAHaHu?pid=ImgDet&rs=1" width="200px" height="200px" style="border-radius: 12px; border: 2px solid gray">
-            <h3 style="margin-top: 30px;">Account of <span>Ricardo Dalisay</span></h3>
-          </div>
-          <div style="height: 3px; background-color:gray; width: 80%; margin-left: -15px;"></div>
-        </div>
-        <div style="width: 100%; height: 100%;">
-          <table style="font-size: larger; margin-right: 2%; margin-top: 10px;">
-            <tr class="acctr">
-                <td class="accDSize">Age</td>
-                <td class="accDescCol"><b>:</b></td>
-                <td style="text-align: left;">19</td>
-            </tr>
-            <tr class="acctr">
-                <td class="accDSize">Birthdate</td>
-                <td class="accDescCol"><b>:</b></td>
-                <td style="text-align: left;">October 10, 2021</td>
-            </tr>
-            <tr class="acctr">
-                <td class="accDSize">Rank</td>
-                <td class="accDescCol"><b>:</b></td>
-                <td style="text-align: left;">Pulis</td>
-            </tr>
-            <tr class="acctr">
-                <td class="accDSize">Account No.</td>
-                <td class="accDescCol"><b>:</b></td>
-                <td style="text-align: left;">20201000000</td>
-            </tr>
-            <tr class="acctr">
-                <td class="accDSize">E-mail Address</td>
-                <td class="accDescCol"><b>:</b></td>
-                <td style="text-align: left;">ricardodalisay@gmail.com</td>
-            </tr>
-        </table>
-        </div>
+       <?php
+       if(mysqli_num_rows($sqlEmployeeDetails)>0){
+         $row = mysqli_fetch_assoc($sqlEmployeeDetails);
+         echo '
+         <div>
+           <div>
+             <img src="https://assets2.rappler.com/612F469A6EA84F6BAE882D2B94A4B421/img/877D9184AA214A65A9B2D6F2DA4FEE7C/camp-crame.jpg" width="200px" height="200px" style="border-radius: 12px; border: 2px solid gray">
+             <h3 style="margin-top: 30px;">Account of <span>'.$row['first_name'].' '.$row['middle_name'].' '.$row['last_name'].'</span></h3>
+           </div>
+           <div style="height: 3px; background-color:gray; width: 80%; margin-left: -15px;"></div>
+         </div>
+         <div style="width: 100%; height: 100%;">
+           <table style="font-size: larger; margin-right: 2%; margin-top: 10px;">
+             <tr class="acctr">
+                 <td class="accDSize">Birthdate</td>
+                 <td class="accDescCol"><b>:</b></td>
+                 <td style="text-align: left;">'.$row['birth_date'].'</td>
+             </tr>
+             <tr class="acctr">
+                 <td class="accDSize">Rank</td>
+                 <td class="accDescCol"><b>:</b></td>
+                 <td style="text-align: left;">'.$row['rank'].'</td>
+             </tr>
+             <tr class="acctr">
+                 <td class="accDSize">Account No.</td>
+                 <td class="accDescCol"><b>:</b></td>
+                 <td style="text-align: left;">'.$row['pnp_account_no'].'</td>
+             </tr>
+             <tr class="acctr">
+                 <td class="accDSize">E-mail Address</td>
+                 <td class="accDescCol"><b>:</b></td>
+                 <td style="text-align: left;">'.$row['email_address'].'</td>
+             </tr>
+         </table>
+         </div>
+         ';
+       }
+
+        ?>
+
      </div>
 
     </body>

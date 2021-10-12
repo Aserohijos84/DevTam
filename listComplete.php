@@ -1,7 +1,7 @@
 <?php
 session_start();
  include 'database.php';
-$sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = ".$_SESSION['pnp_account_no']." and isDone= 0;");
+$sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = ".$_SESSION['pnp_account_no']." and isDone= 1;");
 
 
  ?>
@@ -20,21 +20,14 @@ $sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = 
                   <h5 class="mb-1">'.$rows["task_heading"].'</h5>
                   <small>'.$rows["date_created"].'</small>
                 </div>
-                <div class="dv" style="display:flex;">
-                      <p class="mb-1">'.$rows["task_description"].'</p>
-                      <small>'.(($rows["isDone"]==1)? "Status: Done" : "Status: Ongoing").'</small>
-                    </a>
-                    <form action="downloadAndDelete.php" method="POST">
-                    <button type="submit" name="markasdone" class="btn btn-info" style="position: relative; " value='.$rows['todo_list_id'].'>Mark as done</button>
-                    </form>
-                </div>
-
-
+                <p class="mb-1">'.$rows["task_description"].'</p>
+                <small>'.(($rows["isDone"]==1)? "Status: Done" : "Status: Ongoing").'</small>
+              </a>
             </div>';
             }
           }
           else{
-            echo "Nothing to do today.";
+            echo "You haven't finished any task yet.";
           }
        ?>
 
