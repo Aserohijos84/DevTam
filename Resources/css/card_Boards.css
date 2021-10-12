@@ -1,0 +1,28 @@
+.deptCard{
+    width: 300px;
+    height: 340px; 
+    margin: 15px; 
+    border-radius: 12px; 
+    border: 1px rgb(175, 175, 175) solid; 
+    display: flex; 
+    align-content: left;
+}
+
+.imgDept{
+    border-top-left-radius: 12px; 
+    border-top-right-radius: 12px;
+}
+
+.accDSize{
+    width: 160px; 
+    text-align: left;
+}
+
+.accDescCol{
+    text-align: left; 
+    width: 3%;
+}
+
+.acctr{
+    height: 40px;
+}
