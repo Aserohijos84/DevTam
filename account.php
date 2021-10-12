@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="Resources/css/lnInp.css" type="text/css">
         <link rel="stylesheet" href="Resources/css/task.css" type="text/css">
+        <link rel="stylesheet" href="Resources/css/card_Boards.css" type="text/css">
     </head>
     <body style="background-color: rgb(245, 245, 245);">
       <!--SIDEBAR-->
@@ -26,9 +27,9 @@
 
       <img src="./Resources/imgs/logo.png" width="300px" height="130px" style="margin-top: 15px; margin-bottom: 35px;">
 
-      <div class="ss" onclick="window.location.href = 'home.php'">Home</div>
-      <div class="ss" onclick="window.location.href = 'account.php'"> Account</div>
-      <div class="ss" onclick="window.location.href = 'content.php';">Shared Files</div>
+      <div class="sidebarBtn" onclick="window.location.href = 'home.php'">Home</div>
+      <div class="sidebarBtn" onclick="window.location.href = 'account.php'"> Account</div>
+      <div class="sidebarBtn" onclick="window.location.href = 'content.php';">Shared Files</div>
 
        <form action="logout.php" method="post" target="_self">
          <button
@@ -49,29 +50,29 @@
         </div>
         <div style="width: 100%; height: 100%;">
           <table style="font-size: larger; margin-right: 2%; margin-top: 10px;">
-            <tr style="height: 40px;">
-                <td style="width: 160px; text-align: left;">Age</td>
-                <td style="text-align: left; width: 3%;"><b>:</b></td>
+            <tr class="acctr">
+                <td class="accDSize">Age</td>
+                <td class="accDescCol"><b>:</b></td>
                 <td style="text-align: left;">19</td>
             </tr>
-            <tr style="height: 40px;">
-                <td style="width: 160px; text-align: left;">Birthdate</td>
-                <td style="text-align: left; width: 3%;"><b>:</b></td>
+            <tr class="acctr">
+                <td class="accDSize">Birthdate</td>
+                <td class="accDescCol"><b>:</b></td>
                 <td style="text-align: left;">October 10, 2021</td>
             </tr>
-            <tr style="height: 40px;">
-                <td style="width: 160px; text-align: left;">Rank</td>
-                <td style="text-align: left; width: 3%;"><b>:</b></td>
+            <tr class="acctr">
+                <td class="accDSize">Rank</td>
+                <td class="accDescCol"><b>:</b></td>
                 <td style="text-align: left;">Pulis</td>
             </tr>
-            <tr style="height: 40px;">
-                <td style="width: 160px; text-align: left;">Account No.</td>
-                <td style="text-align: left; width: 3%;"><b>:</b></td>
+            <tr class="acctr">
+                <td class="accDSize">Account No.</td>
+                <td class="accDescCol"><b>:</b></td>
                 <td style="text-align: left;">20201000000</td>
             </tr>
-            <tr style="height: 40px;">
-                <td style="width: 160px; text-align: left;">E-mail Address</td>
-                <td style="text-align: left; width: 3%;"><b>:</b></td>
+            <tr class="acctr">
+                <td class="accDSize">E-mail Address</td>
+                <td class="accDescCol"><b>:</b></td>
                 <td style="text-align: left;">ricardodalisay@gmail.com</td>
             </tr>
         </table>
