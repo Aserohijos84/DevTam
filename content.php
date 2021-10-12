@@ -1,6 +1,6 @@
 <?php
 session_start();
-  $_SESSION["active_unit"] = 1;
+  $_SESSION["active_unit"];
  ?>
 <html>
     <head>
