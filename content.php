@@ -107,8 +107,9 @@ session_start();
            //file holder: formFile
            $filename = $_FILES['formFile']['name'];
            $data = file_get_contents($_FILES['formFile']['tmp_name']);
+
            $sqlInsertFile = mysqli_query($conn, "
-           INSERT INTO `shared_files` VALUES (NULL, 'new_sample_file2.txt', CURRENT_TIMESTAMP, ".$data.", '".$_SESSION["pnp_account_no"]."', '".$_SESSION["active_unit"]."');
+           INSERT INTO `shared_files` VALUES (NULL, 'new_sample_file2.txt', CURRENT_TIMESTAMP, 0x6e6577, '20210000', '2');
            ");
         }
          ?>
