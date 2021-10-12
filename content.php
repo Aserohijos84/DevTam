@@ -6,7 +6,6 @@ session_start();
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="Resources/css/lnInp2.css" type="text/css">
-
     </head>
     <body style="background-color: rgb(245, 245, 245);">
         <div style="width: 100%; height: 125px; position: relative; top: 0; left: 0%; background-color: rgb(67, 67, 126); margin-bottom: 30px;">
@@ -30,25 +29,52 @@ session_start();
 
               if(mysqli_num_rows($sqlPNPUnitCards) > 0){
                 while($rowsPNPUnitCards  = mysqli_fetch_assoc($sqlPNPUnitCards)){
-                  echo '  <div class="column-content" id= "'.$rowsPNPUnitCards['pnp_unit_id'].'">'.$rowsPNPUnitCards['pnp_unit_name'].'</div> ';
+
+                  echo  '<form action="" method="POST" style="padding:0; margin:0;">
+                  <button class="column-content" id= "'.$rowsPNPUnitCards['pnp_unit_id'].'"
+                          name="viewFiles"
+                          value="'.$rowsPNPUnitCards['pnp_unit_id'].'"
+                          style ="width: 100%; border: none; text-align: left; margin: 0; padding: 20px;">
+                  '.$rowsPNPUnitCards['pnp_unit_name'].
+                  '</button>
+                  </form> ';
                     }
                   }
+                if(isset($_POST["viewFiles"])){
+                  $_SESSION["active_unit"] = $_POST["viewFiles"];
+                }
         ?>
             </div>
           </div>
           <div class="column-shared-files" style="width: 100%;">
             <!-- -->
-            <!--   <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#upload" style="width: auto; margin: 25px; padding: 10px; font-weight: bolder;">
-                + Add New File
-              </button>
-              <div class="card" style="width: auto; margin: 25px; padding: 10px;">
-                <h5>Test name</h5>
-                <button style="position:absolute; right: 10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#configFile"><img src="Resources/imgs/gear.png"  width="20px" height="20px"></button>
-                <button style="position:absolute; right: 65px;" type="button" class="btn btn-primary"><img src="Resources/imgs/download.png"  width="20px" height="20px"></button>
-                <button style="position:absolute; right: 120px;" type="button" class="btn btn-primary"><img src="Resources/imgs/delete.png"  width="20px" height="20px"></button>-->
-                <iframe src="content-sharedfiles.php" title="description" style="width: 100%; height: 100%;"></iframe>
-          </div>
+            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#upload" style="width: auto; margin: 25px; padding: 10px; font-weight: bolder;">
+              + Add New File
+            </button>
+            <!--   -->
+     <?php
+     include 'database.php';
 
+     $pnp_account_no= $_SESSION["pnp_account_no"];
+     $pnp_unit_id= $_SESSION["pnp_unit_id"];
+     $sqlSharedFiles=mysqli_query($conn, "
+     SELECT DISTINCT shared_files.*, pnp_unit.pnp_unit_name FROM `shared_files`, pnp_unit where  (shared_files.pnp_unit_id = pnp_unit.pnp_unit_id)
+ and shared_files.pnp_account_no = 20210000");
+
+       if(mysqli_num_rows($sqlSharedFiles) > 0){
+         while($rows  = mysqli_fetch_assoc($sqlSharedFiles)){
+           if($rows["pnp_unit_id"] == $_SESSION["active_unit"]  ){
+             echo '<div class="card" style="width: auto; height: auto; margin: 25px; padding: 10px; id= '.$rows["file_id"].'">
+                <h5>'.$rows["filename"].'</h5>
+                <button style="position:absolute; right: 65px;" type="button" class="btn btn-primary"><img src="Resources/imgs/download.png"  width="20px" height="20px"></button>
+                <button style="position:absolute; right: 120px;" type="button" class="btn btn-primary"><img src="Resources/imgs/delete.png"  width="20px" height="20px"></button>
+             </div>';
+           }
+             }
+           }
+      ?>
+                <!--   <iframe src="content-sharedfiles.php" title="description" style="width: 100%; height: 100%;"></iframe>-->
+          </div>
           </div>
         </div>
         <!-- Modal -->
@@ -69,30 +95,6 @@ session_start();
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-primary">Upload</button>
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade" id="configFile" tabindex="-1" aria-labelledby="conf" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="conf">Configure file</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                  <div class="mb-3">
-                      <form action="" method="post">
-                          <div class="form-floating mb-3">
-                              <input type="text" class="form-control" id="floatingInput" placeholder="filename">
-                              <label for="floatingInput">File Name</label>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">Save Changes</button>
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
               </div>
             </div>
