@@ -8,20 +8,30 @@ session_start();
       <link rel="stylesheet" href="Resources/css/lnInp2.css" type="text/css">
     </head>
     <body style="background-color: rgb(245, 245, 245);" >
-        <div style="width: 100%; height: 125px; position: relative; top: 0; left: 0%; background-color: rgb(67, 67, 126); margin-bottom: 30px; display: flex;"">
-            <h1 style="bottom: 0; margin-left: 100px; padding-top: 25px; position: relative; font-size: xxx-large; color: white;">
-              Shared with me
-            </h1>
-            <button onclick= "window.location.href = 'home.php'"  type="button" class="btn btn-primary" style="width: auto; margin: 25px; padding: 10px; font-weight: bolder; position: right; "  >
-              Back to Home
-            </button>
-        </div>
+    <!--Header-->
+    	<header id="header" class="fixed-top d-flex align-items-center">
+            <img src="Resources/imgs/logo.png" class="logo-img">
+    		<div class="container d-flex justify-content-center">
+    			<div class="logo"><h1>PNP VIRTUAL WORKSPACE</h1>
+            </div>
+    	</div>
+    	</header>
+        <!--End of Header-->
+      <br> <br>
+    <div style="width: 100%; height: 125px; position: relative; top: 0; left: 0%; background-color: rgb(67, 67, 126); margin-bottom: 30px; display: flex;"">
+      <h1 style="bottom: 0; margin-left: 100px; padding-top: 25px; position: relative; font-size: xxx-large; color: white;">
+        Shared with me
+      </h1>
+      <button onclick= "window.location.href = 'home.php'"  type="button" class="btn btn-primary" style="width: auto; margin: 25px; padding: 10px; font-weight: bolder; position: right; "  >
+        Back to Home
+      </button>
+    </div>
         <div class="column-divider" style="display: flex; width: 100%; height:80%; ">
-          <div class="column-units" style="width: 40%; height: 100%; border-right: 2px;">
+          <div class="column-units" style="width: 40%; height: 100%">
             <div class="column-title-holder" style="text-align: center;">
               <h2><b>PNP UNIT</b></h2>
             </div>
-            <div class="column-content-holder" >
+            <div class="column-content-holder">
               <?php
               include 'database.php';
 
