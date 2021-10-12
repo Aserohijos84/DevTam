@@ -30,6 +30,5 @@ $sqlToDoList=mysqli_query($conn,"SELECT * FROM todo_list WHERE pnp_account_no = 
             echo "You haven't finished any task yet.";
           }
        ?>
-
     </body>
 </html>

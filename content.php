@@ -1,5 +1,6 @@
 <?php
 session_start();
+  $_SESSION["active_unit"] = 1;
  ?>
 <html>
     <head>
@@ -104,7 +105,7 @@ session_start();
                       <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancel"/>
                   </div>
                 </form>
-                
+
               </div>
             </div>
           </div>
