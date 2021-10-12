@@ -16,7 +16,6 @@ session_start();
               Back to Home
             </button>
         </div>
-
         <div class="column-divider" style="display: flex; width: 100%; height:80%; ">
           <div class="column-units" style="width: 40%; height: 100%; border-right: 2px;">
             <div class="column-title-holder" style="text-align: center;">
@@ -69,8 +68,8 @@ session_start();
            if($rows["pnp_unit_id"] == $_SESSION["active_unit"]  ){
              echo '<div class="card" style="width: auto; height: auto; margin: 25px; padding: 10px; id= '.$rows["file_id"].'">
                 <h5>'.$rows["filename"].'</h5>
-                <button style="position:absolute; right: 65px;" type="button" class="btn btn-primary"><img src="Resources/imgs/download.png"  width="20px" height="20px"></button>
-                <button style="position:absolute; right: 120px;" type="button" class="btn btn-primary"><img src="Resources/imgs/delete.png"  width="20px" height="20px"></button>
+                <button style="position:absolute; right: 65px;" type="button" class="btn btn-primary" name="download"><img src="Resources/imgs/download.png"  width="20px" height="20px"></button>
+                <button style="position:absolute; right: 120px;" type="button" class="btn btn-primary" name="delete"><img src="Resources/imgs/delete.png"  width="20px" height="20px"></button>
              </div>';
            }
              }
@@ -80,28 +79,39 @@ session_start();
           </div>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="upload" tabindex="-1" aria-labelledby="uploadFile" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="uploadFile">Upload a file</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                  <div class="mb-3">
-                      <form action="" method="post">
-                          <label for="formFile" class="form-label">File</label>
-                          <input class="form-control" type="file" id="formFile">
-                      </form>
-                  </div>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">Upload</button>
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <form action="" method="POST">
+          <div class="modal fade" id="upload" tabindex="-1" aria-labelledby="uploadFile" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="uploadFile">Upload a file</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                            <label for="formFile" class="form-label">File</label>
+                            <input class="form-control" type="file" id="formFile" name="formFile">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" name="upload">Upload</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
+        <?php
+        if(isset($_POST["upload"])){
+           include 'database.php';
+           //file holder: formFile
+           $filename = $_FILES['formFile']['name'];
+           $data = file_get_contents($_FILES['formFile']['tmp_name']);
 
+           $sqlInsertFile = mysqli_query($conn, "
+           INSERT INTO `shared_files` VALUES (NULL, 'new_sample_file2.txt', CURRENT_TIMESTAMP, 0x6e6577, '20210000', '2');
+           ");
+        }
+         ?>
     </body>
 </html>
