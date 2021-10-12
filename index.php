@@ -9,14 +9,14 @@
     </head>
     <body style="background-color: rgb(67, 67, 126); margin: 0px; padding: 0px;">
       <!--Header-->
-    	<header id="header" class="fixed-top d-flex align-items-center">
-            <img src="Resources/imgs/logo.png" class="logo-img">
-    		<div class="container d-flex justify-content-center">
-    			<div class="logo"><h1>PNP VIRTUAL WORKSPACE</h1>
-            </div>
-    	</div>
-    	</header>
-        <!--End of Header-->
+        	<header id="header" class="fixed-top d-flex align-items-center">
+                <img src="Resources/imgs/logo.png" class="logo-img">
+        		<div class="container d-flex justify-content-center">
+        			<div class="logo"><h1>PNP VIRTUAL WORKSPACE</h1>
+                </div>
+        	</div>
+        	</header>
+            <!--End of Header-->
         <div class="bgChange" style="width: 100%; height: 100%; top: 0; left: 0; position: fixed;"></div>
         <div class="card" style="width: 350px; height: 400px; margin: auto; margin-top: 175px; border-radius: 12px; box-shadow: 4px 4px 3px 2px rgb(31, 31, 31);">
             <div class="card-body" style="margin: 5%; padding-top: 10%; text-align: center;">
