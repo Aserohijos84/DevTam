@@ -6,6 +6,7 @@ session_start();
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="Resources/css/lnInp2.css" type="text/css">
+      <link rel="stylesheet" href="Resources/css/lnInp.css" type="text/css">
     </head>
     <body style="background-color: rgb(245, 245, 245);" >
     <!--Header-->
@@ -17,7 +18,6 @@ session_start();
     	</div>
     	</header>
         <!--End of Header-->
-      <br> <br>
     <div style="width: 100%; height: 125px; position: relative; top: 0; left: 0%; background-color: rgb(67, 67, 126); margin-bottom: 30px; display: flex;"">
       <h1 style="bottom: 0; margin-left: 100px; padding-top: 25px; position: relative; font-size: xxx-large; color: white;">
         Shared with me
@@ -58,7 +58,7 @@ session_start();
         ?>
             </div>
           </div>
-          <div class="column-shared-files" style="width: 100%;">
+          <div class="column-shared-files .shrdFDiv" style="width: 100%; border-left: 3px solid rgb(184, 184, 184);">
             <!-- -->
             <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#upload" style="width: auto; margin: 25px; padding: 10px; font-weight: bolder;">
               + Add New File
