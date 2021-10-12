@@ -6,16 +6,24 @@ session_start();
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="Resources/css/lnInp2.css" type="text/css">
+      <link rel="stylesheet" href="Resources/css/lnInp.css" type="text/css">
     </head>
     <body style="background-color: rgb(245, 245, 245);" >
-
+      <!--Header-->
+      <header id="header" class="fixed-top d-flex align-items-center"> 
+        <img src="./Resources/imgs/logo.png" class="logo-img">
+        <div class="container d-flex justify-content-center">
+            <div class="logo"><h1>PNP VIRTUAL WORKSPACE</h1></div>
+        </div>
+      </header>
+      <!--End of Header-->
         <div style="width: 100%; height: 125px; position: relative; top: 0; left: 0%; background-color: rgb(67, 67, 126); margin-bottom: 30px; display: flex;"">
-            <h1 style="bottom: 0; margin-left: 100px; padding-top: 25px; position: relative; font-size: xxx-large; color: white;">
-              Shared with me
-            </h1>
-            <button onclick= "window.location.href = 'home.php'"  type="button" class="btn btn-primary" style="width: auto; margin: 25px; padding: 10px; font-weight: bolder; position: right; "  >
-              Back to Home
-            </button>
+          <button onclick= "window.location.href = 'home.php'"  type="button" class="btn sidebarBtn" style="width: auto; height: auto; margin: 20px; padding: 10px; font-weight: bolder; position: right; "  >
+            ❮
+          </button>
+          <h1 style="bottom: 0; padding-top: 30px; position: relative; font-size: xxx-large; color: white; vertical-align: middle;">
+            Shared with me
+          </h1>
         </div>
         <div class="column-divider" style="display: flex; width: 100%; height:80%; ">
           <div class="column-units" style="width: 40%; height: 100%; border-right: 2px;">
@@ -49,7 +57,7 @@ session_start();
         ?>
             </div>
           </div>
-          <div class="column-shared-files" style="width: 100%;">
+          <div class="column-shared-files" style="width: 100%; border-left: 3px solid rgb(170, 170, 170);">
             <!-- -->
             <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#upload" style="width: auto; margin: 25px; padding: 10px; font-weight: bolder;">
               + Add New File

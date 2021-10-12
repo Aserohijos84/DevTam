@@ -16,11 +16,18 @@
         <link rel="stylesheet" href="Resources/css/card_Boards.css" type="text/css">
     </head>
     <body style="background-color: rgb(245, 245, 245);">
+      <!--Header-->
+      <header id="header" class="fixed-top d-flex align-items-center"> 
+        <img src="./Resources/imgs/logo.png" class="logo-img">
+        <div class="container d-flex justify-content-center">
+            <div class="logo"><h1>PNP VIRTUAL WORKSPACE</h1>
+        </div>
+    </div>
+    </header>
+    <!--End of Header-->
       <!--SIDEBAR-->
     <div style="width: 300px; height: 100%; position: fixed; top: 0; left: 0%; text-align: left; background-color: rgb(67, 67, 126);">
-
-      <img src="./Resources/imgs/logo.png" width="300px" height="130px" style="margin-top: 15px; margin-bottom: 35px;">
-
+      <br> <br> <br>
       <div class="sidebarBtn" onclick="window.location.href = 'home.php'">Home</div>
       <div class="sidebarBtn" onclick="window.location.href = 'account.php'"> Account</div>
       <div class="sidebarBtn" onclick="window.location.href = 'content.php';">Shared Files</div>
