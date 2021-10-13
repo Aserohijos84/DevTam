@@ -17,7 +17,7 @@
     </head>
     <body style="background-color: rgb(245, 245, 245);">
       <!--Header-->
-      <header id="header" class="fixed-top d-flex align-items-center"> 
+      <header id="header" class="fixed-top d-flex align-items-center">
         <img src="./Resources/imgs/logo.png" class="logo-img">
         <div class="container d-flex justify-content-center">
             <div class="logo"><h1>PNP VIRTUAL WORKSPACE</h1>
